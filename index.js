@@ -4,7 +4,10 @@ import mongoose from "mongoose";
 const app = express();
 import cors from "cors";
 // import dataRoutes from "./routes/routes.js";
+
+import productRoute from "./routes/productRoute.js";
 import dotenv from "dotenv";
+import { insertDummyData } from "./controllers/productController.js";
 
 dotenv.config();
 
@@ -19,9 +22,11 @@ mongoose
   })
   .then((db) => {
     console.log("Database Connected");
+    // insertDummyData();
     app.listen(PORT, () => {
       console.log(db?.connection?.host);
       console.log(`server running on port ${PORT}`);
+
     });
   })
   .catch((err) => {
@@ -30,7 +35,7 @@ mongoose
 
 app.use(express.json());
 
-// app.use("/api/v1/data", dataRoutes);
+app.use("/api/v1/product", productRoute);
 
 app.get("/", (req, res) => {
   res.send("Welcome to Mobile Ordering API server");
