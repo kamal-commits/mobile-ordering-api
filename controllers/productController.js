@@ -176,15 +176,24 @@ const getGroupedData = async (fieldName) => {
     {
       $group: {
         _id: `$${fieldName?.toLowerCase()}`,
-        count: { $sum: 1 },
+        // count: { $sum: 1 },
       },
     },
   ]).toArray()
-  return data?.reduce((acc, el) => {
-    acc[el?._id] = el?.count
-    return acc
+
+  let resObj = {
+    [fieldName]: []
   }
-    , {})
+
+
+  // Pushing all the values in array
+
+  data.forEach(el => {
+    resObj[fieldName].push(el._id)
+  })
+
+  return resObj[fieldName]
+
 
 }
 
