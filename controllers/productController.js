@@ -1,5 +1,5 @@
 import Product from "../models/productModel.js";
-
+import mongoose from "mongoose";
 export const insertDummyData = async () => {
 
   console.log("Importing Data...");
@@ -89,29 +89,28 @@ export const insertDummyData = async () => {
   ]
 
   // Mix Mobile descriptions
-
   const mobileDescriptions = [
-    "Samsung Galaxy S21 smartphone was launched on 14th January 2021. The phone comes with a 6.20-inch touchscreen display with a resolution of 1080x2400 pixels at a pixel density of 421 pixels per inch (ppi) and an aspect ratio of 20:9. Samsung Galaxy S21 is powered by a 2.2GHz octa-core Samsung Exynos 2100 processor that features 3 cores clocked at 2.8GHz, 4 cores clocked at 2.2GHz and 1 cores clocked at 2.9GHz. It comes with 8GB of RAM. The Samsung Galaxy S21 runs Android 11 and is powered by a 4000mAh battery. The Samsung Galaxy S21 supports wireless charging, as well as proprietary fast charging.",
-    "Apple iPhone 13 Pro smartphone was launched on 14th September 2021. The phone comes with a 6.10-inch touchscreen display with a resolution of 1170x2532 pixels at a pixel density of 460 pixels per inch (ppi). The Apple iPhone 13 Pro supports wireless charging, as well as proprietary fast charging.",
-    "Google Pixel 6 smartphone was launched on 19th October 2021. The phone comes with a 6.40-inch touchscreen display with a resolution of 1080x2400 pixels at a pixel density of 411 pixels per inch (ppi) and an aspect ratio of 20:9. Google Pixel 6 is powered by an octa-core Google Tensor processor. It comes with 8GB of RAM. The Google Pixel 6 runs Android 12 and is powered by a 4614mAh battery. The Google Pixel 6 supports proprietary fast charging.",
-    "OnePlus 9 smartphone was launched on 23rd March 2021. The phone comes with a 6.55-inch touchscreen display with a resolution of 1080x2400 pixels at a pixel density of 402 pixels per inch (ppi) and an aspect ratio of 20:9. OnePlus 9 is powered by an octa-core Qualcomm Snapdragon 888 processor. It comes with 8GB of RAM. The OnePlus 9 runs Android 11 and is powered by a 4500mAh battery. The OnePlus 9 supports proprietary fast charging.",
-    "Xiaomi Mi 11 smartphone was launched on 28th December 2020. The phone comes with a 6.81-inch touchscreen display with a resolution of 1440x3200 pixels at a pixel density of 515 pixels per inch (ppi) and an aspect ratio of 20:9. Xiaomi Mi 11 is powered by an octa-core Qualcomm Snapdragon 888 processor. It comes with 8GB of RAM. The Xiaomi Mi 11 runs Android 11 and is powered by a 4600mAh battery. The Xiaomi Mi 11 supports wireless charging, as well as proprietary fast charging.",
-    "Huawei P40 smartphone was launched on 26th March 2020. The phone comes with a 6.10-inch touchscreen display with a resolution of 1080x2340 pixels and an aspect ratio of 19.5:9. Huawei P40 is powered by an octa-core HiSilicon Kirin 990 5G processor. It comes with 8GB of RAM. The Huawei P40 runs Android 10 and is powered by a 3800mAh battery. The Huawei P40 supports wireless charging, as well as proprietary fast charging.",
-    "LG G8 ThinQ smartphone was launched in February 2019. The phone comes with a 6.10-inch touchscreen display with a resolution of 1440x3120 pixels at a pixel density of 564 pixels per inch (ppi) and an aspect ratio of 19.5:9. LG G8 ThinQ is powered by an octa-core Qualcomm Snapdragon 855 processor. It comes with 6GB of RAM. The LG G8 ThinQ runs Android 9.0 and is powered by a 3500mAh battery. The LG G8 ThinQ supports Quick Charge 3.0 fast charging.",
-    "Sony Xperia 1 III smartphone was launched on 14th April 2021. The phone comes with a 6.50-inch touchscreen display with a resolution of 1644x3840 pixels and an aspect ratio of 21:9. Sony Xperia 1 III is powered by an octa-core Qualcomm Snapdragon 888 processor. It comes with 12GB of RAM. The Sony Xperia 1 III runs Android 11 and is powered by a 4500mAh battery. The Sony Xperia 1 III supports proprietary fast charging.",
-    "Motorola Edge+ smartphone was launched on 22nd April 2020. The phone comes with a 6.70-inch touchscreen display with a resolution of 1080x2340 pixels at a pixel density of 385 pixels per inch (ppi) and an aspect ratio of 21:9. Motorola Edge+ is powered by an octa-core Qualcomm Snapdragon 865 processor. It comes with 12GB of RAM. The Motorola Edge+ runs Android 10 and is powered by a 5000mAh battery. The Motorola Edge+ supports wireless charging, as well as proprietary fast charging.",
-    "Nokia 9 PureView smartphone was launched in February 2019. The phone comes with a 5.99-inch touchscreen display with a resolution of 1440x2880 pixels and an aspect ratio of 18:9. Nokia 9 PureView is powered by an octa-core Qualcomm Snapdragon 845 processor. It comes with 6GB of RAM. The Nokia 9 PureView runs Android 9.0 Pie and is powered by a 3320mAh battery. The Nokia 9 PureView supports wireless charging, as well as proprietary fast charging.",
-    "Oppo Find X3 Pro smartphone was launched on 11th March 2021. The phone comes with a 6.70-inch touchscreen display with a resolution of 1440x3216 pixels at a pixel density of 525 pixels per inch (ppi) and an aspect ratio of 20:9. Oppo Find X3 Pro is powered by an octa-core Qualcomm Snapdragon 888 processor. It comes with 12GB of RAM. The Oppo Find X3 Pro runs Android 11 and is powered by a 4500mAh battery. The Oppo Find X3 Pro supports proprietary fast charging.",
-    "Vivo X60 Pro smartphone was launched on 22nd March 2021. The phone comes with a 6.56-inch touchscreen display with a resolution of 1080x2376 pixels at a pixel density of 398 pixels per inch (ppi) and an aspect ratio of 19.8:9. Vivo X60 Pro is powered by an octa-core Qualcomm Snapdragon 870 processor. It comes with 12GB of RAM. The Vivo X60 Pro runs Android 11 and is powered by a 4200mAh battery. The Vivo X60 Pro supports proprietary fast charging.",
-    "Realme GT smartphone was launched on 4th March 2021. The phone comes with a 6.43-inch touchscreen display with a resolution of 1080x2400 pixels and an aspect ratio of 20:9. Realme GT is powered by an octa-core Qualcomm Snapdragon 888 processor. It comes with 8GB of RAM. The Realme GT runs Android 11 and is powered by a 4500mAh battery. The Realme GT supports proprietary fast charging.",
-    "Asus ROG Phone 5 smartphone was launched on 10th March 2021. The phone comes with a 6.78-inch touchscreen display with a resolution of 1080x2448 pixels and an aspect ratio of 20.4:9. Asus ROG Phone 5 is powered by an octa-core Qualcomm Snapdragon 888 processor. It comes with 8GB of RAM. The Asus ROG Phone 5 runs Android 11 and is powered by a 6000mAh battery. The Asus ROG Phone 5 supports proprietary fast charging.",
-    "Lenovo Legion Phone Duel 2 smartphone was launched on 8th April 2021. The phone comes with a 6.92-inch touchscreen display with a resolution of 1080x2460 pixels and an aspect ratio of 20.5:9. Lenovo Legion Phone Duel 2 is powered by an octa-core Qualcomm Snapdragon 888 processor. It comes with 12GB of RAM. The Lenovo Legion Phone Duel 2 runs Android 11 and is powered by a 5500mAh battery. The Lenovo Legion Phone Duel 2 supports proprietary fast charging.",
-    "Xiaomi Redmi Note 10 smartphone was launched on 4th March 2021. The phone comes with a 6.43-inch touchscreen display with a resolution of 1080x2400 pixels and an aspect ratio of 20:9. Xiaomi Redmi Note 10 is powered by an octa-core Qualcomm Snapdragon 678 processor. It comes with 4GB of RAM. The Xiaomi Redmi Note 10 runs Android 11 and is powered by a 5000mAh battery. The Xiaomi Redmi Note 10 supports proprietary fast charging.",
-    "Samsung Galaxy A52 smartphone was launched on 17th March 2021. The phone comes with a 6.50-inch touchscreen display with a resolution of 1080x2400 pixels and an aspect ratio of 20:9. Samsung Galaxy A52 is powered by an octa-core Qualcomm Snapdragon 720G processor. It comes with 6GB of RAM. The Samsung Galaxy A52 runs Android 11 and is powered by a 4500mAh battery. The Samsung Galaxy A52 supports proprietary fast charging.",
-    "Apple iPhone SE (2020) smartphone was launched on 15th April 2020. The phone comes with a 4.70-inch touchscreen display with a resolution of 750x1334 pixels at a pixel density of 326 pixels per inch (ppi). Apple iPhone SE (2020) is powered by a hexa-core Apple A13 Bionic processor. It comes with 3GB of RAM. The Apple iPhone SE (2020) runs iOS 13 and is powered by a 1821mAh battery. The Apple iPhone SE (2020) supports wireless charging, as well as proprietary fast charging.",
-    "Google Pixel 5a smartphone was launched on 17th August 2021. The phone comes with a 6.34-inch touchscreen display with a resolution of 1080x2400 pixels at a pixel density of 413 pixels per inch (ppi) and an aspect ratio of 20:9. Google Pixel 5a is powered by an octa-core Qualcomm Snapdragon 765G processor. It comes with 6GB of RAM. The Google Pixel 5a runs Android 11 and is powered by a 4680mAh battery. The Google Pixel 5a supports proprietary fast charging.",
-    "OnePlus Nord smartphone was launched on 21st July 2020. The phone comes with a 6.44-inch touchscreen display with a resolution of 1080x2400 pixels and an aspect ratio of 20:9. OnePlus Nord is powered by an octa-core Qualcomm Snapdragon 765G processor. It comes with 8GB of RAM. The OnePlus Nord runs Android 10 and is powered by a 4115mAh battery. The OnePlus Nord supports proprietary fast charging."
-  ]
+    "Samsung Galaxy S21 - 6.2'' display, Exynos 2100, 8GB RAM, 4000mAh battery, wireless & fast charging.",
+    "Apple iPhone 13 Pro - 6.1'' display, A15 Bionic chip, supports wireless and fast charging.",
+    "Google Pixel 6 - 6.4'' display, Google Tensor processor, 8GB RAM, 4614mAh battery, fast charging.",
+    "OnePlus 9 - 6.55'' display, Snapdragon 888, 8GB RAM, 4500mAh battery, proprietary fast charging.",
+    "Xiaomi Mi 11 - 6.81'' display, Snapdragon 888, 8GB RAM, 4600mAh battery, wireless & fast charging.",
+    "Huawei P40 - 6.1'' display, Kirin 990 5G, 8GB RAM, 3800mAh battery, wireless & fast charging.",
+    "LG G8 ThinQ - 6.1'' display, Snapdragon 855, 6GB RAM, 3500mAh battery, Quick Charge 3.0.",
+    "Sony Xperia 1 III - 6.5'' display, Snapdragon 888, 12GB RAM, 4500mAh battery, proprietary fast charging.",
+    "Motorola Edge+ - 6.7'' display, Snapdragon 865, 12GB RAM, 5000mAh battery, wireless & fast charging.",
+    "Nokia 9 PureView - 5.99'' display, Snapdragon 845, 6GB RAM, 3320mAh battery, wireless & fast charging.",
+    "Oppo Find X3 Pro - 6.7'' display, Snapdragon 888, 12GB RAM, 4500mAh battery, proprietary fast charging.",
+    "Vivo X60 Pro - 6.56'' display, Snapdragon 870, 12GB RAM, 4200mAh battery, proprietary fast charging.",
+    "Realme GT - 6.43'' display, Snapdragon 888, 8GB RAM, 4500mAh battery, proprietary fast charging.",
+    "Asus ROG Phone 5 - 6.78'' display, Snapdragon 888, 8GB RAM, 6000mAh battery, proprietary fast charging.",
+    "Lenovo Legion Phone Duel 2 - 6.92'' display, Snapdragon 888, 12GB RAM, 5500mAh battery, proprietary fast charging.",
+    "Xiaomi Redmi Note 10 - 6.43'' display, Snapdragon 678, 4GB RAM, 5000mAh battery, proprietary fast charging.",
+    "Samsung Galaxy A52 - 6.5'' display, Snapdragon 720G, 6GB RAM, 4500mAh battery, proprietary fast charging.",
+    "Apple iPhone SE (2020) - 4.7'' display, A13 Bionic chip, 3GB RAM, supports wireless and fast charging.",
+    "Google Pixel 5a - 6.34'' display, Snapdragon 765G, 6GB RAM, 4680mAh battery, proprietary fast charging.",
+    "OnePlus Nord - 6.44'' display, Snapdragon 765G, 8GB RAM, 4115mAh battery, proprietary fast charging."
+  ];
 
 
   for (let i = 0; i < 20; i++) {
@@ -122,7 +121,7 @@ export const insertDummyData = async () => {
       image: mobileImages[i],
       processor: processors[Math.floor(Math.random() * processors.length)],
       memory: memories[Math.floor(Math.random() * memories.length)],
-      OS: OSs[Math.floor(Math.random() * OSs.length)],
+      os: OSs[Math.floor(Math.random() * OSs.length)],
     }
     productArray.push(product)
   }
@@ -153,13 +152,7 @@ export const getAllProducts = async (req, res) => {
       })
 
     }
-
-
     console.log({ filter })
-
-
-
-
     const data = await Product.find(filter).limit(limit).skip((page - 1) * limit)
 
     return res.status(200).json({ data, message: "Products Fetched Successfully" })
@@ -171,5 +164,51 @@ export const getAllProducts = async (req, res) => {
     return res.status(500).json({ message: error.message });
 
   }
+
+
+
+
+}
+
+const getGroupedData = async (fieldName) => {
+  console.log(fieldName)
+  const data = await mongoose.connection.db.collection("products").aggregate([
+    {
+      $group: {
+        _id: `$${fieldName?.toLowerCase()}`,
+        count: { $sum: 1 },
+      },
+    },
+  ]).toArray()
+  return data?.reduce((acc, el) => {
+    acc[el?._id] = el?.count
+    return acc
+  }
+    , {})
+
+}
+
+
+export const getFilters = async (req, res) => {
+
+  try {
+
+    let groupNames = ["Processor", "Memory", "OS"]
+
+    let resObj = {}
+    await Promise.all(groupNames.map(async (el) => {
+      const data = await getGroupedData(el)
+      resObj[el] = data
+
+    }
+    ))
+    return res.status(200).json({ data: resObj, message: "Filters Fetched Successfully" })
+
+
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+
+  }
+
 
 }

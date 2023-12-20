@@ -21,7 +21,7 @@ const productSchema = mongoose.Schema({
   memory: {
     type: String,
   },
-  OS: {
+  os: {
     type: String,
   },
   // /price, name, type, processor, memory, OS.
